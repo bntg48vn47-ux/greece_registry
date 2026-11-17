@@ -106,7 +106,7 @@ const un=String(v.get("username")).trim(),ok=await db.rpc("username_available",{
 if(!ok.data){m.textContent=t("taken");return}
 const {data,error}=await db.auth.signUp({email:v.get("email"),password:v.get("password"),options:{data:{username:un,country:v.get("country")}}});
 if(error){m.textContent=error.message;return}
-if(!data.session)m.textContent=t("checkmail")}
+if(!data.session){const r=await db.auth.signInWithPassword({email:v.get("email"),password:v.get("password")});if(r.error)m.textContent=t("checkmail");else location.hash="#home"}}
 
 /* ---------- add a car ---------- */
 function setOk(m){const o=$("ok");o.textContent=m;o.hidden=!m}
