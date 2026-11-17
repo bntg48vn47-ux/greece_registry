@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Greece Registry</title>
+<meta name="description" content="A visual archive of rare and exotic cars seen on Greek roads.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Manrope:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="owner"><div class="wrap"><span id="own"></span> <a href="https://www.instagram.com/gr_registry" target="_blank" rel="noopener">gr_registry</a></div></div>
+<header class="top"><div class="wrap">
+<a class="logo" href="#home">Greece<span>Registry</span></a>
+<nav id="nav"></nav>
+<div class="usr" id="usr"></div>
+<div class="lang" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="el">ΕΛ</button></div>
+</div></header>
+<main id="app" class="wrap"></main>
+<footer><div class="wrap"><span id="copy"></span><a href="#legal" id="fl"></a><a href="#contact" id="fc"></a></div></footer>
+<dialog id="dlg"><form class="f" id="addf">
+<h2 id="dt"></h2>
+<div class="row"><label><span data-k="plate"></span><input name="plate" required maxlength="8" placeholder="ΑΒΕ" autocomplete="off"></label><label><span data-k="year"></span><input name="year" type="number" min="1950" max="2026" required></label></div>
+<small data-k="plhint" style="color:var(--mute)"></small>
+<div class="row"><label><span data-k="brand"></span><input name="brand" required></label><label><span data-k="model"></span><input name="model" required></label></div>
+<div class="row"><label><span data-k="color"></span><input name="color"></label><label><span data-k="interior"></span><input name="interior"></label></div>
+<div class="row"><label><span data-k="drive"></span><select name="drive"><option>LHD</option><option>RHD</option></select></label><label><span data-k="notes"></span><input name="notes"></label></div>
+<div><b id="pl" style="font-size:14px"></b> <span id="pc" style="color:var(--mute);font-size:14px">0/10</span><div class="pv" id="pv"></div><button type="button" class="btn alt" id="pb"></button><input type="file" id="pf" accept="image/*" multiple hidden></div>
+<p class="note" id="ph2" hidden></p>
+<div style="display:flex;gap:10px;justify-content:flex-end"><button type="button" class="btn alt" id="cx"></button><button class="btn" id="sb"></button></div>
+<p id="ok" class="note" hidden></p>
+</form></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
